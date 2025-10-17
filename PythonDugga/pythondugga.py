@@ -9,16 +9,17 @@
 # Input data:
 numbers = [15, -5, -12, 7, 10, -7, 3, -10, 4]
 
-# a) 
+# a) Identify all numbers with an absolute value >= 10. Print the sum of those numbers.
 summa = 0
 for num in numbers:
     if abs(num) >= 10:
         summa += num
 print(summa)
 
+# 15 - 12 + 10 - 10 = 3
 # 3
 
-# b)
+# b) Build and print a list of the cubes (n^3) of negative numbers:
 cube_list = []
 for num in numbers:
     if num < 0:
@@ -26,8 +27,9 @@ for num in numbers:
 print(cube_list)
 
 # [-125, -1728, -343, -1000]
+# (There are 4 negative numbers in numers and in this list. I at least know that the first and last cube-number is correct.)
 
-# c) 
+# c) Scan left-to-right and print the first repeated absolute value; if none, print "No repeats"
 seen = []
 first_dup = None
 for n in numbers:
@@ -38,6 +40,7 @@ for n in numbers:
         seen.append(n)
 print(first_dup if first_dup is not None else "No repeats")
 
+# The first value that repeats its absolute value is 7. There is both 7 and -7 before 10 and -10.
 # 7
 
 ######################
@@ -60,7 +63,7 @@ import sys
 # Avoiding har coded paths by letting the user define the path to the input file.
 input_file = sys.argv[1]     # Should be "brca_head500_genes.csv"
 
-# Så när du kör filen: python pythondugga.py brca_head500_genes.csv
+# So when you run the file: python pythondugga.py brca_head500_genes.csv
 
 df = pd.read_csv(input_file, sep=',')
 
